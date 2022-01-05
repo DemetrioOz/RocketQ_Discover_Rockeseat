@@ -18,6 +18,7 @@ html {
   --grey-dark: #4d5e77;
   --grey-blue: #a1b2cd;
   --grey-light: #e5eaf1;
+  --grey-medium: #eaecf2;
 
   /*usa o rem como 10px assim permite uma utilização melhor*/
   font-size: 62.5%;
