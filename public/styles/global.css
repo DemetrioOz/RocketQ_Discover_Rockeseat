@@ -2,44 +2,64 @@
   margin: 0;
   padding: 0;
   border: none;
-  box-sizing: border-box;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 html {
   --black: #0d114f;
   --white: #fafafa;
+  --red: #e83f5b;
   --light-blue: #e0ecff;
   --blue: #3485ff;
-  --red: #e83f5b;
   --background: #f6faff;
   --overlay: #040911;
   --icons-details: #a5b0c1;
+
   --grey-dark: #4d5e77;
   --grey-blue: #a1b2cd;
   --grey-light: #e5eaf1;
   --grey-medium: #eaecf2;
 
-  /*usa o rem como 10px assim permite uma utilização melhor*/
-  font-size: 62.5%;
+  /* 1rem = 16px (User Agent) = 100% (User Agent) */
+  font-size: 62.5%; /* 10px */
 }
 
 body {
-  height: 100vh;
-  background-color: var(--background);
   display: flex;
+  height: 100vh;
+  background: var(--background);
 }
 
 body,
 button,
 input,
 textarea {
-  /*intevalo de tamanho*/
+  /* intervalo de tamanho */
   font-size: clamp(14px, 1.6rem, 2vw);
 
-  font-family: "open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/*--------- input and buttons*/
 input,
 button,
 .button {
@@ -60,8 +80,9 @@ button,
   background: var(--blue);
   color: var(--white);
 
-  cursor: pointer;
   transition: filter 0.2s;
+
+  cursor: pointer;
 }
 
 button:hover,
@@ -77,28 +98,24 @@ button > img,
 
 button.outlined,
 .button.outlined {
-  background: var(--wright);
+  background: var(--white);
   color: var(--blue);
-
   border: 0.2rem solid var(--blue);
 }
 
-.content {
-  width: 100%;
-  margin: 0 auto;
+button.red,
+.button.red {
+  background: var(--red);
+  color: var(--white);
 }
 
-.sr-only {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+button.grey,
+.button.grey {
+  background: var(--grey-light);
+  color: var(--grey-dark);
 }
+
+/*** HEADER ****/
 
 .content header {
   width: 80%;
